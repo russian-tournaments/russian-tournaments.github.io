@@ -1,0 +1,961 @@
+/*
+    stream chat block
+*/
+
+#srteamslider .srteamtoggle {
+    bottom: 0;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+}
+
+/****/
+
+.block-stream{
+   height:100%;
+}
+.expanded .index_stream {
+    overflow-y: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: auto;
+    top: 45px;
+    max-height:none!important;
+}
+.stmblocks {
+    bottom: 0;
+    display: none;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 50px;
+}
+.st_inner{
+    min-height: 200px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.expanded .st_inner {
+    position: absolute;
+    z-index: 2;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0;
+}
+.expanded.toggled_stream .st_inner {
+    left: 20px;
+    right: 20px;
+    top: 100px;
+}
+
+/*CHAT*/
+.chat-inner {
+   /*background: #262B2D none repeat scroll 0 0;*/
+    background: #1d2b30 none repeat scroll 0 0;
+    height: 100%;
+    min-width: 250px;
+    position: relative;
+}
+.block-chat {
+    bottom: 0;
+    height: auto;
+    left: 0;
+    max-height: none;
+    padding-bottom: 0 !important;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.chat-wrap {
+    bottom: 0;
+    position: absolute;
+    top: 40px;
+    width: 100%;
+}
+.chatter {
+    bottom: 60px;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.tse-scrollable{
+    width: 328px;
+}
+.chat-action {
+    bottom: 0;
+    height: 60px;
+    left: 0;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    background:#2C3236;
+}
+.chat-text{
+    position:relative;
+}
+.chat-text textarea {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    display: block;
+    height: 40px !important;
+    line-height: 14px;
+    width: 100%!important;
+    padding: 5px 88px 5px 5px;
+    resize: none;
+    width: auto;
+}
+.chat-text .btn-chat {
+    background-color: #075f81;
+    border: 0 none;
+    border-radius: 0;
+    box-shadow: none;
+    color: #bde9f5;
+    height: 40px;
+    line-height: 25px;
+    position: absolute;
+    right: 0;
+    text-shadow: none;
+    top: 0;
+    width: 50px;
+    transition: all 0.2s ease-in-out 0s;
+}
+.chat-text .btn-chat:hover {
+    background-color: #1188B7;
+    color: #fff;
+}
+.mmore {
+    background: rgba(34, 68, 81, 0.91) url("../img/spoiler.png");
+    color: #438b9f;
+    cursor: pointer;
+    left: 0;
+    opacity: 0;
+    padding: 5px 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: -27px;
+    transition: all 0.2s ease-in-out 0s;
+    z-index: 1;
+    cursor:pointer;
+}
+.mmore.visible{
+    opacity: 1;
+}
+.mmore:hover{
+    background-color: rgba(34, 68, 81, 1);
+    color: #6BBCD2;
+}
+.tse-list > div {
+    margin: -5px 0;
+    padding: 6px 10px;
+    position: relative;
+    word-wrap: break-word;
+    color: #8c8c9c;
+    line-height:20px;
+    font-size:13px;
+}
+.tse-list > div time {
+    float: left;
+    color: #8c8c9c;
+    margin-right:5px;
+}
+.tse-list > div > b,
+.ulist li > b {
+    color: #ddd;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 85px;
+    font-weight: 700;
+    vertical-align: bottom;
+    font-size: 12px;
+}
+.tse-list > div > b:hover,
+.ulist li > b:hover {
+    cursor:pointer;
+    text-decoration:underline;
+}
+.tse-list > div > em {
+    font-style: normal;
+    font-weight: bold;
+    margin-right: 4px;
+}
+.tse-list > div > u i.moderator,
+.ulist u i.moderator{
+    background: #34ae0a url("http://web-cdn.ttvnw.net/images/xarth/badge_mod.svg") repeat scroll 0 0 / 100% auto;
+}
+.tse-list > div > u i,
+.ulist u i {
+    display: inline-block;
+    float: left;
+    height: 18px;
+    margin: 1px 3px 1px 0;
+    min-width: 18px;
+    vertical-align: middle;
+}
+.tse-list > div > span {
+    color: #63808A;
+}
+.tse-list{
+    padding:6px 0;
+}
+.emoticon {
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin: -10px 0;
+    vertical-align: middle;
+    max-height: 40px;
+}
+.tse-list > div.msg-admin {
+    /*color: #586269;*/
+    background: #1f404b url("../img/spoiler.png") repeat scroll 0 0;
+    color: #82b6da;
+    margin: 10px 0;
+    padding: 5px 10px;
+    text-align: center;
+}
+.tse-list > msg-stream{
+    color: #7EA9BA;
+    text-align: center;
+    margin: 5px 0;
+    background: #0E1E23;
+}
+
+/*chatpopover*/
+.user-popover .popover-content {
+    height: 85px;
+    padding: 0;
+    width: 255px;
+}
+.popover.user-popover {
+    background: #00adee none repeat scroll 0 0;
+    border-radius: 1px;
+    border: 0 none;
+}
+.popover.left.user-popover > .arrow::after {
+    border-left-color: #00adee;
+}
+.popover.right.user-popover > .arrow::after {
+    border-right-color: #00adee;
+}
+.popover.top.user-popover > .arrow::after {
+    border-top-color: #00adee;
+}
+.popover.bottom.user-popover > .arrow::after {
+    border-bottom-color: #00adee;
+}
+.userpop .fa-times {
+    color: #05101e;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 0;
+    opacity: 0.3;
+    position: absolute;
+    right: 4px;
+    text-shadow: none;
+    top: 2px;
+}
+.userpop .fa-times:hover {
+    
+}
+.userpop {
+    padding: 0 0 0 70px;
+    position: relative;
+}
+.cuva > img {
+    border-radius: 40px;
+    width: 100%;
+}
+.cuva {
+    display: inline-block;
+    left: 10px;
+    position: absolute;
+    top: 17px;
+    vertical-align: bottom;
+    width: 50px;
+}
+.cunick {
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-weight: bold;
+    padding: 10px 0 0;
+    max-width: 165px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+    white-space: nowrap;
+}
+.cuact {
+    font-size: 17px;
+    margin: 2px 0 0 -3px;
+}
+.cuact a {
+    background:rgba(27, 82, 108, 0.44) none repeat scroll 0 0;
+    border-radius: 41px;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    height: 24px;
+    line-height: 23px;
+    margin: 0 3px;
+    text-align: center;
+    width: 24px;
+    transition:all .1s linear;
+}
+.cuact a:hover{
+     background: #72CD07 none repeat scroll 0 0;
+     color: #fff;
+}
+.curole {
+    color: #fff;
+    display: block;
+    font-size: 10px;
+}
+.chat-head {
+    /*background: #2c3236 none repeat scroll 0 0;*/
+    background: rgb(51, 51, 51);
+    border-bottom: 1px solid #3e484e;
+    height: 40px;
+}
+.chat-head .dropdown{
+    display:inline-block;
+}
+.ch_room.dropdown a.dropdown-toggle {
+    color: #7ea9ba;
+    cursor: pointer;
+    display: block;
+    font-size: 14px;
+    max-width: 200px;
+    overflow: hidden;
+    padding: 10px 15px 10px 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.chat-head .dropdown a.dropdown-toggle:hover,
+.chat-head .dropdown.open a.dropdown-toggle{
+    text-decoration:none;
+    background:#0e82b8;
+    color:#fff;
+}
+.ch_room .dropdown-toggle .fa {
+    position: relative;
+    top: -2px;
+    margin-right:5px;
+}
+.ch_room .dropdown-menu {
+    border: 0 none;
+    margin: 0;
+    width: 334px;
+}
+.ch_room .ch_menu {
+    background: #0e82b8 url("../img/spoiler.png");
+    height: 370px;
+    overflow: auto;
+    padding: 10px 0;
+}
+.srteamtoggle .ch_menu ul {
+    margin: 0;
+    max-height: none;
+    overflow: unset;
+    padding: 10px 0;
+}
+.room_list{
+    padding:10px;
+}
+.ch_room .ch_menu li > a {
+    color: #c6ebff;
+    display: block;
+    overflow: hidden;
+    padding: 4px 10px 4px 10px;
+    margin-right: 55px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition:initial;
+}
+.ch_room .ch_menu li > a:hover{
+    text-decoration:none;
+    background:#0A6392;
+    color:#fff;
+}
+.ch_room .ch_menu li .badge:hover{
+    background:#fff;
+    color:#0e82b8;
+    border-color:#fff;
+}
+.room_create {
+    border: 1px solid;
+    border-radius: 40px;
+    color: #b1dce8;
+    cursor: pointer;
+    display: block;
+    float: right;
+    font-size: 12px;
+    height: 29px;
+    line-height: 26px;
+    margin: 6px 9px 0 0;
+    opacity: 0.8;
+    text-align: center;
+    width: 89px;
+}
+.room_create:hover{
+    text-decoration:none;
+    background:#fff;
+    color:#0e82b8;
+    border-color: #0e82b8;
+    opacity: 1;
+}
+.room_create .fa {
+    font-size: 15px;
+    line-height: 12px;
+    vertical-align: middle;
+}
+.ch_menu strong {
+    color: #eee;
+    display: block;
+    padding: 10px 15px 0px 20px;
+    text-transform: uppercase;
+}
+.ch_menu .badge {
+    background: transparent none repeat scroll 0 0;
+    border: 1px solid rgba(146, 192, 217, 0.76);
+    color: rgba(191, 225, 244, 0.78);
+    font-weight: normal;
+}
+.ch_room .ch_menu li:hover{
+    background:#0A6392;
+}
+.ch_opti{
+    float:right;
+}
+.ch_opti > div > a {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 20px;
+    height: 39px;
+    line-height: 37px;
+    min-width: 40px;
+    padding: 0 5px;
+    text-align: center;
+    height:40px;
+}
+.ch_opti > div > a:hover {
+    background:#0e82b8;
+    color:#fff;
+}
+.ch_cog > a >i{
+    transition:all .2s linear;
+}
+.ch_cog a:hover i{
+    transform:scale(1.2);
+}
+.ch_users span {
+    background: transparent none repeat scroll 0 0;
+    border: 1px solid rgba(146, 192, 217, 0.4);
+    border-radius: 20px;
+    color: rgba(191, 225, 244, 0.6);
+    display: inline-block;
+    font-size: 10px;
+    font-weight: normal;
+    line-height: 18px;
+    padding: 0 0.5em;
+    position: relative;
+    top: -1px;
+    vertical-align: middle;
+}
+.open .ch_users,
+.open .ch_cog.active{
+    background:#0e82b8;
+    color:#fff;
+}
+.open .ch_users span{
+    border: 1px solid rgba(255, 255, 255, 0.53);
+    color: #dcf3ff;
+}
+.ch_opti .dropdown {
+    position: inherit;
+}
+.ch_users_window, .ch_opti_window {
+    background: #243036 url("../img/spoiler.png") repeat scroll 0 0;
+    border: 0 none;
+    bottom: 0px;
+    left: 0;
+    margin: 0;
+    overflow: hidden;
+    padding: 40px 0 0 0;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    z-index: 1800;
+    border-bottom:2px solid #0e82b8;
+}
+.ch_header {
+    background: #0e82b8 none repeat scroll 0 0;
+    color: #cef3fe;
+    font-size: 16px;
+    left: 0;
+    padding: 10px 11px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+}
+.cwcl {
+    color: #CEF3FE;
+    cursor: pointer;
+    float: right;
+    font-size: 20px;
+    margin: -10px;
+    padding: 11px;
+    width: 40px;
+    transition:all .2s linear;
+}
+.cwcl a:hover {
+    transform:scale(1.2);
+}
+.cexternal {
+    color: #CEF3FE;
+    cursor: pointer;
+    float: left;
+    font-size: 20px;
+    margin: -10px;
+    padding: 11px;
+    width: 40px;
+}
+.cwcl:hover,
+.cexternal:hover {
+    color: #fff;
+}
+.udo {
+    float: right;
+    opacity: 0.5;
+    cursor:pointer;
+}
+.udo:hover {
+    opacity: 1;
+}
+.hhh {
+    display: block;
+    padding: 20px 20px 0;
+    text-transform: uppercase;
+}
+.srteamtoggle ul.ulist{
+    max-height: 438px;
+    position: relative;
+    top: 0;
+}
+.ulist li{
+    padding:0 20px;
+}
+.ch_options {
+    font-size: 13px;
+    padding: 10px 20px;
+}
+.ch_options .hhh{
+    padding: 15px 0;
+}
+.ch_colors .active{
+    box-shadow: 0 0 0 2px #fff inset;
+}
+.ch_colors a {
+    background: #eee none repeat scroll 0 0;
+    border-radius: 50%;
+    display: inline-block;
+    height: 20px;
+    margin: 2px;
+    width: 20px;
+    cursor:pointer;
+    transition:all .2s linear;
+}
+.ch_colors a:hover {
+    box-shadow: 0 0 0 2px #fff inset;
+    transform:scale(1.2);
+}
+/*EMO*/
+.emotic-btn {
+    cursor: pointer;
+    font-size: 17px;
+    opacity: .5;
+    position: absolute;
+    right: 66px;
+    top: 7px;
+}
+.emotic-btn:hover{
+    opacity:1;
+}
+.emo_block {
+    background: #0E82B8;
+    position: absolute;
+    bottom: 50px;
+    height: 0px;
+    left: -10px;
+    z-index: 11;
+    right: -10px;
+    opacity:0;
+    display:none;
+    transition:all .2s ease;
+}
+.emo_block.active {
+    height: 280px;
+    opacity:1;
+    display:block;
+    transition:all .2s ease;
+}
+.emo_block.active:after{
+	content: '';
+    display: block;
+    position: absolute;
+    bottom: -15px;
+    right: 72px;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #0E82B8;
+}
+.stickerer{
+    width: 328px;
+    height: 270px;
+}
+.stickers-list{
+    padding:9px;
+}
+.stickers-list img{
+    margin: 0px;
+    width: 49px;
+}
+.s_choser img{
+    width:32px;
+    height:32px;
+}
+.s_choser{
+    height:40px;
+    background:#0c6b97;
+    overflow:hidden;
+}
+.s_choser li.active{
+    background: #0E82B8;
+    opacity:1;
+}
+.s_choser li:hover {
+    opacity: 1;
+}
+.s_choser li {
+    float: left;
+    padding: 4px;
+    cursor:pointer;
+    opacity: .7;
+}
+.stickers-list span{
+    cursor:pointer;
+}
+.stickers-list span:hover img{
+    transform:scale(1.1);
+}
+.stickers-list a:hover{
+    text-decoration:none;
+}
+.smore {
+    float: right!important;
+    font-size: 24px;
+    position: relative;
+    color: #c3f3f8;
+    width: 32px;
+    height: 32px;
+    line-height: 33px;
+}
+.smore b {
+    background: red;
+    color: #fff;
+    position: absolute;
+    top: 2px;
+    font-size: 10px;
+    right: 2px;
+    width: 17px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 17px;
+}
+.shistory {
+    float: right!important;
+    font-size: 24px;
+    position: relative;
+    color: #c3f3f8;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+}
+/*EMO*/
+
+
+/*----------------------------------------------*/
+.open-wms .chat-inner{
+    /*
+    filter: blur(7px);
+    -webkit-filter: blur(7px);
+    */
+    opacity:.2;
+}
+.chat-inner{
+    transition:all .3s ease;
+    filter: blur(0);
+}
+.chat-wms-over {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    background: url("../img/spoiler.png");
+    opacity: 0;
+    transition: all .3s ease;
+    z-index: -1000;
+}
+.open-wms .chat-wms-over {
+    opacity: 1;
+    z-index: 1000;
+}
+.chat-wms{
+    position:relative;
+    top:60px;
+    margin:30px 10% 0;
+    background:#0e82b8;
+    color: #fff;
+    opacity:0;
+    transition:all .3s ease;
+    transform:scale(1.2);
+}
+.open-wms .chat-wms{
+    opacity:1;
+    top:0;
+    transform:scale(1);
+}
+.chat-wms .close{
+    position: absolute;
+    top: 1px;
+    right: 0px;
+}
+.chat-wms-head{
+    color: #eee;
+    display: block;
+    padding: 10px 25px 0px 15px;
+    text-transform: uppercase;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.chat-wms-body{
+    padding:15px;
+}
+.chat-wms .form-control {
+    background-color: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.33);
+    color: #fff;
+}
+.chat-wms .form-control::-webkit-input-placeholder {color:#fff;opacity:.7;}
+.chat-wms .form-control::-moz-placeholder          {color:#fff;opacity:.7;}/* Firefox 19+ */
+.chat-wms .form-control:-moz-placeholder           {color:#fff;opacity:.7;}/* Firefox 18- */
+.chat-wms .form-control:-ms-input-placeholder      {color:#fff;opacity:.7;}
+.pagebg .chat-wms hr {
+    border-color: rgba(252, 252, 252, 0.53);
+}
+.ch_close{
+    cursor: pointer;
+    display: inline-block;
+    font-size: 20px;
+    height: 39px;
+    line-height: 37px;
+    min-width: 40px;
+    padding: 0;
+    text-align: center;
+    height: 40px;
+}
+.ch_close .fa{
+    
+}
+.r_act{
+    float: right;
+    padding: 3px 10px;
+}
+.loading:after{
+    content:'';
+    background:url("../ring.svg") 50% 50% no-repeat;
+    display:block;
+    width:50px;
+    height:50px;
+    z-index:100;
+    margin:-25px 0 0 -25px;
+    position:absolute;
+    top:50%;
+    left:50%;
+}
+
+.chat-wms-body .cuh {
+    margin-top: -20px;
+    text-align: center;
+}
+.chat-wms-body .cuva {
+    position: relative;
+    top: 0;
+    left:0;
+}
+.chat-wms-body .cuact {
+    margin: 10px 0;
+    text-align: center;
+}
+.chat-wms .cuact > a {
+    font-size: 17px;
+    height: 35px;
+    line-height: 35px;
+    width: 35px;
+}
+.toroom {
+    padding-right: 45px;
+    position: relative;
+}
+.toroom .btn {
+    border-color: transparent;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.chat-wms .userpop {
+    padding: 0;
+    position: relative;
+}
+.chsearch{
+    padding:20px 20px 0 20px;
+}
+.chat-wms .form-control option {
+    background: #0e82b8 none repeat scroll 0 0;
+    padding: 5px 10px;
+}
+.newlab{
+    opacity:1;
+}
+.newlab:after {
+    border-radius: 0.25em;
+    color: #68ceea;
+    content: "new";
+    display: block;
+    font-size: 10px;
+    left: 13px;
+    line-height: 1;
+    padding: 0 2px;
+    position: absolute;
+    text-align: center;
+    top: 35px;
+    vertical-align: baseline;
+    white-space: nowrap;
+}
+.btn-st u {
+    background: #c91a1a none repeat scroll 0 0;
+    border-radius: 15px;
+    color: #f5bde8;
+    content: "new";
+    display: block;
+    font-size: 11px;
+    line-height: 13px;
+    padding: 0 4px;
+    position: absolute;
+    right: 3px;
+    text-align: center;
+    text-decoration: none;
+    top: 4px;
+    vertical-align: baseline;
+    white-space: nowrap;
+}
+.newm {
+    background: #0a4a5f none repeat scroll 0 0;
+    opacity: 0.7 !important;
+}
+.newm.current{
+    opacity: 1 !important;
+}
+
+
+/**
+NEW STYLES for match head
+**/
+
+.match-header{
+    margin:0;
+}
+.match-nav {
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    background:#1C3843 url("../img/spoiler.png") repeat scroll 0 0;
+}
+.nav-pills.match-nav > li {
+    line-height: 15px;
+    padding: 15px 5px;
+}
+.match-header h1 {
+    font: 300 28px/34px "Open Sans",Arial,sans-serif;
+}
+
+h2.matchh2 {
+    background: #24292c url("../img/spoiler.png") repeat scroll 0 0;
+    font: 300 21px/24px "Open Sans",Arial,sans-serif;
+    margin: 0;
+    padding: 18px 20px;
+    text-transform: uppercase;
+    border-top: medium none;
+    /*
+    color: #6dc8d5;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4), 0 0 8px #42a6b8;
+    */
+}
+/*
+.vsm time{
+    font-size: 30px;
+    margin: 0;
+}
+*/
+.maction {
+    padding: 10px 0;
+}
+.mop2 {
+    padding: 0 20px 20px 0;
+}
+.mop1 {
+    padding: 0 0 20px 20px;
+}
+/*
+.srteamtoggle {
+    background: #1d2b33;
+}
+.sttoggle-btn, .sbtn {
+    color: #85e9ff;
+}
+.stream_action .stm a{
+    color: #85e9ff;
+}
+.stm a:hover{
+    opacity:1;
+}
+.stm a.current {
+    background: #1f404b none repeat scroll 0 0!important;
+}
+.srteamtoggle .stmblock {
+    border-top: 2px solid #1f404b;
+}
+.srteamtoggle .chat-head {
+    background: #1f404b none repeat scroll 0 0;
+}
+*/
